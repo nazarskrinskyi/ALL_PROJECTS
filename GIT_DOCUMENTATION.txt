@@ -1,0 +1,33 @@
+#-comment
+=> GIT 1)ALLOW TO STORE DIFFERENT VERSION OF THE SAME PROJECT
+        2) ALLOW exchange projects history with your colleges
+        3) GIT HAS INTEGRATION SO NO MATER HOW MANY OF YOUR COLLEGES \
+            WILL USE THE SAME REPOSITORY FROM GIT
+#-pwd=>root(similar to __DIR__)(parent work dirs)
+#-ls => list of dirs around me
+#-ls -a => shows hidden info
+//Global CONFIGURATION:
+#git config user.(exp) "(exp)"
+# cat => show file's info
+//GIT 1)ALLOW TO HAVE MORE THAN ONE GIT ACCOUNT
+        2)GIT SETTINGS:1)--SYSTEM = FOR EVERY ONE
+                        2)--GLOBAL = FOR USER
+                        3)--LOCAL = FOR PRIVATE WORK WITH TEAM
+# git (name of command) --global alias.(rename witch u choose) (name of command)
+# git status - show the state of files in dir
+# git add (file name) will add it to index(Index store list of files)
+# chmod (+- exp) (file name)-> modify file
+# if above command not work:
+    # git update-index --chmod=+x <file name>
+    # git show (code that was created after successful git commit command)df3a4fbc
+    # git commit --author='name<email>' --date='..'
+    # git reset HEAD <dir name>->cancel add command(ignore dirs)
+    # git commit -m 'some message to explain' -> write title in file indicated -m arg
+    # git add -p(flag give a choice which project add to index) <file name>
+
+//ATOMIC -> TO MODIFY PROJECTS BY ADDING OR FIXING SOMETHING 1
+ AND COMMITTING IT-> CORRECT WAY OF GIT(COMMIT MUST BE LOGICAL AND
+  BE A LITTLE DIFFERENT FROM PARENT)
+  !!!!COMMIT EARLY COMMIT OFTEN!!!!///
+
+

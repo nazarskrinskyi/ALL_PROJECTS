@@ -1,0 +1,198 @@
+/**AND OPERATOR*/#$sql = "SELECT * FROM users2 WHERE id>2 and id<10";
+/**Команда AS*/#$sql = "SELECT id as user_id FROM users2";
+/**Функция AVG*/#$sql = "SELECT  AVG(age) FROM users2 WHERE age>=24";
+/**Команда BETWEEN*/#$sql = "SELECT * FROM users2 WHERE age BETWEEN 21 AND 25";
+/** Функция COUNT */#$sql = "SELECT COUNT(age) FROM users2 WHERE age between 19 and 21";
+/**Функция CONCAT*/#$sql = "SELECT *, CONCAT(age,'-',name,'-',id) AS AllAtributes FROM users2";#предназначена для сложения строк
+/**CONCAT_WS*/#CONCAT_WS -> concat with separator
+/**FUNCTION CURRENT_DATE*/#$sql = "INSERT INTO users2 SET date = CURRENT_DATE()";
+/**$sql = "DELETE FROM users2 where date";*/
+/**Команда DISTINCT*/#$sql = "SELECT DISTINCT age AS AGE FROM users2";#Команда DISTINCT позволяет выбирать только уникальные значения(NOT REPEATED)
+/**Функция DAY*/#$sql = "SELECT DAY(date) FROM users2 WHERE date";
+/**Функция DATE_FORMAT*/#$sql = "SELECT *, DATE_FORMAT(date,'%Y-%m-%d %h:%i:%s') FROM users2 WHERE date";
+/**Функция DATE_ADD*/
+#$sql = "SELECT *,DATE_ADD(date,INTERVAL 1 day) FROM users2";
+/**Функция ELT*/
+#$sql = "SELECT ELT(1,id) FROM users2";
+##Функция ELT выбирает одно из полей по его номеру (нумерация полей с единицы).
+/**Функция EXTRACT*/#$sql = "SELECT EXTRACT(DAY_HOUR FROM date) FROM users2 where date";
+/**Функция FIELD*//*$sql = "SELECT *,FIELD('Alexandr',name) FROM users2 ";*/
+/**Команды JOIN, INNER JOIN, LEFT JOIN, RIGHT JOIN*/
+/*$sql = "SELECT
+	cities.id         as city_id,
+	cities.name       as city_name,
+	cities.country_id as city_country_id,
+	countries.id      as country_id,
+	countries.name    as country_name
+FROM cities LEFT JOIN countries ON countries.id=cities.country_id";*//** show table's params after From (name) */
+
+/*$sql = "SELECT
+	cities.id         as city_id,
+	cities.name       as city_name,
+	cities.country_id as city_country_id,
+	countries.id      as country_id,
+	countries.name    as country_name
+FROM cities RIGHT JOIN countries ON countries.id=cities.country_id";*//** show table's params after Join (name) */
+
+/*$sql = "SELECT
+	cities.id         as city_id,
+	cities.name       as city_name,
+	cities.country_id as city_country_id,
+	countries.id      as country_id,
+	countries.name    as country_name
+    FROM cities INNER JOIN countries ON countries.id=cities.country_id";*//** didn't show both table params*/
+/**Команда LIMIT*/
+/*$sql = "SELECT * FROM countries where countries.id >= 1 LIMIT 1";*/
+/*$sql = "SELECT * FROM countries where countries.id >= 1 LIMIT 0,1";*//** STARTS FROM ZERO */
+/*$sql = "UPDATE countries SET id=4 WHERE countries.id=5 LIMIT 1";*/
+/**Команда LIKE*/
+/*$sql = "SELECT * FROM countries WHERE countries.name LIKE 'U%'";*//** NAME THAT STARTS WITH LETTER U */
+/*$sql = "SELECT * FROM countries WHERE countries.name LIKE '%A'";*//** NAME THAT ENDS WITH LETTER A */
+/** Функция LEAST */
+#Функция LEAST выбирает минимальное из значений
+/*$sql = "SELECT users2.id,users2.age,LEAST(users2.age,users2.id) as min_age
+ FROM users2 WHERE users2.age > 0";*/
+/**Функция LOCATE*/
+# Функция LOCATE осуществляет поиск подстроки в строке,
+# возвращает позицию ее первого символа. Учтите, что нумерация символов начинается с 1.
+/*$sql = "SELECT LOCATE('a',countries.name) as first_letter FROM countries";*/
+/*$sql = "SELECT LOCATE('a',countries.name,4) as first_letter FROM countries";*//**START FROM THIRD LETTER*/
+/**Функция LEFT*/
+# Функция LEFT вырезает и возвращает заданное количество символов с начала строки.
+/*$sql = "SELECT name,LEFT(name,2) FROM countries";*/
+/**Функция LPAD*/
+# Функция LPAD дополняет строку до нужного размера добавляя заданные символы в начало строки.
+/*$sql = "SELECT LPAD(name,10,'!') FROM countries ";*/
+/**Функция LOWER*/
+# Функция LOWER переводит строку в нижний регистр (то есть из больших букв делает маленькие).
+/**Функция LTRIM*/
+# Функция LTRIM обрезает пробелы, которые стоят в начале строки.
+/**Функция LENGTH*/
+# Функция LENGTH используется для подсчета количества символов в строках.
+/**Функция MID*/
+# Функция MID вырезает и возвращает заданное количество символов из строки.
+/*$sql = "SELECT countries.name,MID(countries.name, 2,2) FROM countries";*/
+/** Функция MONTHNAME */
+/*$sql = "SELECT date,MONTHNAME(users2.date) FROM users2 ";*/
+/** Команда NOT */
+/*$sql = "SELECT * FROM countries where not countries.id <= 1";*/
+/** Функция NOW */
+# $sql = "SELECT DAY(users2.date) FROM users2 where users2.date > NOW()";
+/*$sql = "UPDATE users2 SET users2.date = DATE_ADD(users2.date,INTERVAL 1 DAY)";*/
+/** Команда OR */
+/*$sql = "SELECT * FROM cities where cities.name = 'Madrid' or cities.id = 1";*//**if both true return value of both*/
+/**Команда ORDER BY*/
+# Команда ORDER BY позволяет сортировать записи по определенному полю при выборе из базы данных.
+/*$sql = "SELECT users2.age FROM users2 ORDER BY users2.age ASC ";*//**FROM LOWER TO UPPER VALUE*/
+/*$sql = "SELECT users2.age FROM users2 ORDER BY users2.age DESC ";*//**FROM UPPER TO LOWER VALUE*/
+/*$sql = "SELECT users2.id,users2.age FROM users2 ORDER BY users2.age asc ,users2.id desc ";*/
+/** firstly sort users2.age and after sorted users2.id
+ * (if params(users2.age) is equal they sorted by users2.id)
+ */
+/** Функция POW (POWER) */
+# Функция POW возводит число в заданную степень.
+/**Функция POSITION*/
+# Функция POSITION осуществляет поиск подстроки в строке,
+# возвращает позицию ее первого символа. Учтите, что нумерация символов начинается с 1.\
+/*$sql = "SELECT countries.name,POSITION('a' in countries.name) as firts_letter FROM countries";*/
+/**Функция ROUND*/
+# Функция ROUND используется для округления дробей до нужного знака в дробной части.
+/**Функция REPLACE*/
+/*$sql = "SELECT countries.name,REPLACE(countries.name,'a','!') as replacement FROM countries";*/
+/**Функция RIGHT*/
+# Функция RIGHT вырезает и возвращает заданное количество символов с конца строки.
+/*$sql = "SELECT RIGHT(countries.name,1) FROM countries";*/
+/**Функция RPAD*/
+# Функция RPAD дополняет строку до нужного размера добавляя заданные символы в конец строки.
+/*$sql = "SELECT RPAD(countries.name,6,'!') FROM countries";*/
+/**Функция REVERSE*/
+# Функция REVERSE переворачивает заданную строку так, чтобы ее символы шли в обратном порядке.
+/**Функция REPEAT*/
+# Функция REPEAT повторяет заданную строку нужное количество раз.
+/**Функция RTRIM*/
+# Функция RTRIM обрезает пробелы, которые стоят в конце строки.
+/**Функция SIGN*/
+# Функция SIGN определяет знак числа. Если число больше нуля - функция вернет 1,
+# если меньше нуля - вернет -1, а если равно нулю - вернет 0.
+/**Функция SUBSTRING*/
+# Функция SUBSTRING вырезает и возвращает заданное количество символов из строки.
+/*$sql = "SELECT SUBSTRING(countries.name,2,3) FROM countries";*/
+/**Функция SUBSTRING_INDEX*/
+/*$sql = "SELECT SUBSTRING(countries.name,'-',1) FROM countries";*/
+/**Функция SEC_TO_TIME*/
+# Функция SEC_TO_TIME преобразует число в секундах в часы, минуты и секунды.
+/*$sql = "SELECT SEC_TO_TIME(users2.date) FROM users2";*/
+
+/**Команда SELECT INTO*/
+# Команда SELECT INTO копирует данные из одной таблицы в другую.
+/*$sql = "SELECT * INTO users FROM users2";*/
+
+/**Функция TRUNCATE*/
+# Функция TRUNCATE округляет число до определенного знака,
+# но не по правилам математического округления, а просто отбрасывая лишние знаки.
+/*SELECT TRUNCATE(поле, сколько_знаков_оставить)
+	FROM имя_таблицы WHERE условие */
+/**Функция TIME_FORMAT*/
+# Функция TIME_FORMAT преобразует время из формата часы:минуты:секунды в другой удобный нам формат.
+
+/**Команда UPDATE*/
+# UPDATE имя_таблицы SET поле1=значение1,
+# поле2=значение2, поле3=значение3...
+# WHERE условие_по_которому_следует_выбрать_строки
+
+/**Команда UNION*/########################################################
+/**С удалением дублей:*/
+/*SELECT * FROM имя_таблицы1 WHERE условие
+    UNION SELECT * FROM имя_таблицы2 WHERE условие*/
+/**Без удаления дублей:*/
+/*SELECT * FROM имя_таблицы1 WHERE условие
+	UNION ALL SELECT * FROM имя_таблицы2 WHERE условие*/
+/*$sql = "SELECT id,name FROM cities UNION ALL SELECT id,name FROM countries";*/#(UNION ALL)
+/*$sql = "SELECT id, name FROM countries UNION SELECT id, name FROM cities ";*/#(UNION) DON'T DELETE DUPLICATES
+/*$sql = "SELECT name FROM countries UNION SELECT name FROM cities";*/#delete duplicates (UNION)
+/**Команда IN*/
+
+# Команда IN выбирает записи из базы данных по определенным значениям поля.
+/*$sql = "SELECT * FROM cities where not cities.name in (length(cities.name) > 6)";*/
+/**Команда INSERT*/
+/*INSERT INTO имя_таблицы (поле1, поле2...)
+	VALUES (значение1, значение2...),
+		(значение1, значение2...)... */
+/**Команда IS NULL*/
+/*$sql = "UPDATE users2 SET users2.age = 15 where users2.age is null limit 2 ";*/
+
+/**Функция INSTR*/
+# Функция INSTR осуществляет поиск подстроки в строке,
+# возвращает позицию ее первого символа. Учтите, что нумерация символов начинается с 1.
+
+/**Команда INTERVAL*/
+# Команда INTERVAL позволяет прибавлять к дате
+# и отнимать от нее определенные промежутки времени.
+/*$sql = "SELECT users2.date + interval '2-4' YEAR_MONTH FROM users2";*/
+
+/**TIMES COMMAND*/
+/*Команды
+SECOND секунды
+MINUTE минуты
+HOUR часы
+DAY дни
+MONTH месяцы
+YEAR года
+MINUTE_SECOND минуты:секунды
+HOUR_MINUTE часы:минуты
+DAY_HOUR дни часы
+YEAR_MONTH года-месяцы
+HOUR_SECOND часы:минуты:секунды
+DAY_MINUTE дни часы:минуты
+DAY_SECOND дни часы:минуты:секунды*/
+
+/**Функция GROUP_CONCAT*/
+/*$sql = "SELECT CONCAT(cities.name,'-',cities.id) FROM cities";
+$sql = "SELECT GROUP_CONCAT(cities.name SEPARATOR '-') as concat FROM cities";*/
+/**Команда GROUP BY*/
+
+# Команда GROUP BY позволяет группировать результаты при выборке из базы данных.
+# К сгруппированным результатам можно применять любые функции
+
+/**Команда HAVING*/
+$sql = "SELECT users2.age,COUNT(users2.age) FROM users2 GROUP BY users2.age HAVING users2.age >=17";

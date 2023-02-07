@@ -1,0 +1,16 @@
+{
+    "require": {
+        "phpmailer/phpmailer": "^6.7",
+      "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "OOP\\HTML_TAGS\\": "../OOP/HTML_TAGS/",
+            "METHOD_SERVER\\": "../METHOD_SERVER/",
+            "OOP\\POLIMORFIZM\\": "../OOP/POLIMORFIZM/",
+            "OOP\\ABSTRACT\\": "../OOP/ABSTRACT/",
+            "OOP\\INTERFACE\\": "../OOP/INTERFACE/",
+            "OOP\\SESSION_COOKIE\\": "../OOP/SESSION_COOKIE/"
+        }
+    }
+}
